@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NutriPlan | AI-Powered Personalized Nutrition</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed": "#c9e6ff",
+              "surface-container": "#eceef0",
+              "tertiary-fixed-dim": "#b7c8e1",
+              "primary-fixed-dim": "#4edea3",
+              "on-error": "#ffffff",
+              "tertiary": "#505f76",
+              "inverse-surface": "#2d3133",
+              "surface": "#f7f9fb",
+              "on-secondary-container": "#004666",
+              "surface-container-highest": "#e0e3e5",
+              "inverse-on-surface": "#eff1f3",
+              "primary-fixed": "#6ffbbe",
+              "on-primary": "#ffffff",
+              "on-error-container": "#93000a",
+              "secondary": "#006591",
+              "surface-dim": "#d8dadc",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed-dim": "#89ceff",
+              "primary-container": "#10b981",
+              "secondary-container": "#39b8fd",
+              "primary": "#006c49",
+              "on-surface": "#191c1e",
+              "on-secondary-fixed-variant": "#004c6e",
+              "on-primary-fixed": "#002113",
+              "on-secondary-fixed": "#001e2f",
+              "error-container": "#ffdad6",
+              "on-background": "#191c1e",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#005236",
+              "on-tertiary-fixed-variant": "#38485d",
+              "outline-variant": "#bbcabf",
+              "outline": "#6c7a71",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#0b1c30",
+              "background": "#f7f9fb",
+              "surface-bright": "#f7f9fb",
+              "tertiary-container": "#94a4bd",
+              "error": "#ba1a1a",
+              "surface-variant": "#e0e3e5",
+              "inverse-primary": "#4edea3",
+              "on-primary-container": "#00422b",
+              "surface-container-high": "#e6e8ea",
+              "tertiary-fixed": "#d3e4fe",
+              "surface-tint": "#006c49",
+              "on-surface-variant": "#3c4a42",
+              "on-tertiary-container": "#2a3a4f",
+              "surface-container-low": "#f2f4f6",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "stack-md": "16px",
+              "stack-sm": "8px",
+              "stack-lg": "32px",
+              "margin-desktop": "48px",
+              "margin-mobile": "20px",
+              "gutter": "24px",
+              "container-max-width": "1280px",
+              "unit": "4px",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "label-md": ["Geist"],
+              "headline-lg": ["Geist"],
+              "headline-lg-mobile": ["Geist"],
+              "display-lg": ["Geist"],
+              "body-md": ["Inter"],
+              "headline-md": ["Geist"],
+              "label-sm": ["Geist"],
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+              "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+              "headline-lg-mobile": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }],
+              "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+              "label-sm": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .bento-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .bento-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -10px rgba(0, 108, 73, 0.1);
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .float-animation {
+        animation: float 4s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
