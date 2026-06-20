@@ -1,13 +1,12 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import Groq from "groq-sdk";
 import Navigation from "./components/Navigation";
-import Hero from "./components/Hero";
-import HowItWorks from "./components/HowItWorks";
-import Features from "./components/Features";
-import MealCards from "./components/MealCards";
-import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import DietPlanModal from "./components/DietPlanModal";
+import HomePage from "./pages/HomePage";
+import RecipesPage from "./pages/RecipesPage";
+import ProgressPage from "./pages/ProgressPage";
+import Groq from "groq-sdk";
 
 function App() {
   const [dietPlan, setDietPlan] = useState("");
@@ -82,25 +81,29 @@ Provide:
   };
 
   return (
-    <div className="bg-surface text-on-surface font-body-md overflow-x-hidden">
-      <Navigation />
-      <Hero onCreatePlan={() => setShowDietModal(true)} />
-      <HowItWorks />
-      <Features />
-      <MealCards />
-      <CTA onGetStarted={() => setShowDietModal(true)} />
-      <Footer />
-      
-      {showDietModal && (
-        <DietPlanModal
-          onClose={closeDietModal}
-          onGenerate={generateDietPlan}
-          loading={loading}
-          dietPlan={dietPlan}
-          userFormData={userFormData}
-        />
-      )}
-    </div>
+    <Router>
+      <div className="bg-surface text-on-surface font-body-md overflow-x-hidden">
+        <Navigation onOpenDietModal={() => setShowDietModal(true)} />
+        
+        <Routes>
+          <Route path="/" element={<HomePage onCreatePlan={() => setShowDietModal(true)} />} />
+          <Route path="/recipes" element={<RecipesPage />} />
+          <Route path="/progress" element={<ProgressPage />} />
+        </Routes>
+
+        <Footer />
+        
+        {showDietModal && (
+          <DietPlanModal
+            onClose={closeDietModal}
+            onGenerate={generateDietPlan}
+            loading={loading}
+            dietPlan={dietPlan}
+            userFormData={userFormData}
+          />
+        )}
+      </div>
+    </Router>
   );
 }
 
